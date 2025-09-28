@@ -16,5 +16,5 @@ try:
     browser.find_element(By.CSS_SELECTOR, "#answer").send_keys(y)
     browser.find_element(By.CSS_SELECTOR, "#solve").click()
 finally:
-    time.sleep(5)
+    time.sleep(1)
     browser.quit()
