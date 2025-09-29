@@ -1,6 +1,7 @@
 import pytest
 from selenium import webdriver
-from selenium.webdriver.common.by import By
+import json
+
 
 @pytest.fixture(scope="function")
 def browser():
@@ -9,3 +10,9 @@ def browser():
     yield browser
     print("\nquit browser..")
     browser.quit()
+
+@pytest.fixture(scope="session")
+def load_config():
+    with open("log.json", "r") as f:
+        config = json.load(f)
+        return config
